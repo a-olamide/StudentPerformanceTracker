@@ -1,6 +1,6 @@
 package repository;
 
-import model.User;
+import models.User;
 
 public interface UserRepository {
     void save(User user);

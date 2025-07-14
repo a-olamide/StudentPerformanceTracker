@@ -18,9 +18,9 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
-import model.Grade;
-import model.Student;
-import model.Subject;
+import models.Grade;
+import models.Student;
+import models.Subject;
 import service.GradeService;
 import service.StudentService;
 import service.SubjectService;

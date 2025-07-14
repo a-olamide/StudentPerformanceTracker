@@ -1,13 +1,14 @@
 package strategy;
 
-import model.Grade;
-import model.Student;
 import repository.SubjectRepository;
 import repository.impl.SubjectRepositoryImpl;
 
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.List;
+
+import models.Grade;
+import models.Student;
 
 public class CsvReportStrategy implements GradeReportStrategy {
     private final SubjectRepository subjectRepo = new SubjectRepositoryImpl();

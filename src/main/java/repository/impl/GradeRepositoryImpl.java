@@ -1,12 +1,13 @@
 package repository.impl;
 
-import model.Grade;
 import repository.GradeRepository;
 import util.DatabaseConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import models.Grade;
 
 public class GradeRepositoryImpl implements GradeRepository {
     @Override

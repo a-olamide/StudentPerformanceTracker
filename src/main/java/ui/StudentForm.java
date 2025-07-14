@@ -16,7 +16,7 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
-import model.Student;
+import models.Student;
 import service.StudentService;
 
 public class StudentForm extends JFrame {

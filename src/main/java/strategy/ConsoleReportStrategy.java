@@ -1,11 +1,12 @@
 package strategy;
 
-import model.Grade;
-import model.Student;
 import repository.SubjectRepository;
 import repository.impl.SubjectRepositoryImpl;
 
 import java.util.List;
+
+import models.Grade;
+import models.Student;
 
 public class ConsoleReportStrategy implements GradeReportStrategy {
     private final SubjectRepository subjectRepo = new SubjectRepositoryImpl();

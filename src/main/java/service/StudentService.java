@@ -1,10 +1,11 @@
 package service;
 
-import model.Student;
 import repository.StudentRepository;
 import repository.impl.StudentRepositoryImpl;
 
 import java.util.List;
+
+import models.Student;
 
 public class StudentService {
     private final StudentRepository studentRepo = new StudentRepositoryImpl();

@@ -1,10 +1,11 @@
 package service;
 
-import model.Grade;
 import repository.GradeRepository;
 import repository.impl.GradeRepositoryImpl;
 
 import java.util.List;
+
+import models.Grade;
 
 public class GradeService {
     private final GradeRepository gradeRepo = new GradeRepositoryImpl();

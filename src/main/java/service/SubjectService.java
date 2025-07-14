@@ -1,10 +1,11 @@
 package service;
 
-import model.Subject;
 import repository.SubjectRepository;
 import repository.impl.SubjectRepositoryImpl;
 
 import java.util.List;
+
+import models.Subject;
 
 public class SubjectService {
     private final SubjectRepository subjectRepo = new SubjectRepositoryImpl();

@@ -1,6 +1,5 @@
 package repository.impl;
 
-import model.User;
 import repository.UserRepository;
 import util.DatabaseConnection;
 
@@ -8,6 +7,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import models.User;
 
 public class UserRepositoryImpl implements UserRepository {
     @Override

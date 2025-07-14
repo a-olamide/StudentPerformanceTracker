@@ -1,8 +1,8 @@
 package repository;
 
-import model.Subject;
-
 import java.util.List;
+
+import models.Subject;
 
 public interface SubjectRepository {
     void save(Subject subject);

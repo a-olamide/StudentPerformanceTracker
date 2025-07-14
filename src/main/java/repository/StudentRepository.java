@@ -1,8 +1,8 @@
 package repository;
 
-import model.Student;
-
 import java.util.List;
+
+import models.Student;
 
 public interface StudentRepository {
     void save(Student student);

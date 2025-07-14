@@ -1,12 +1,13 @@
 package repository.impl;
 
-import model.Subject;
 import repository.SubjectRepository;
 import util.DatabaseConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import models.Subject;
 
 public class SubjectRepositoryImpl implements SubjectRepository {
     @Override

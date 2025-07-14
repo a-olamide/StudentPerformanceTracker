@@ -15,7 +15,7 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
-import model.Subject;
+import models.Subject;
 import service.SubjectService;
 
 public class SubjectForm extends JFrame {

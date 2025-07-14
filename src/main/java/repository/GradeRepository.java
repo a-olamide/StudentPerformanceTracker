@@ -1,8 +1,8 @@
 package repository;
 
-import model.Grade;
-
 import java.util.List;
+
+import models.Grade;
 
 public interface GradeRepository {
     void save(Grade grade);

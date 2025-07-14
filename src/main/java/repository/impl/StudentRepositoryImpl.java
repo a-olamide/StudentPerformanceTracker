@@ -1,12 +1,13 @@
 package repository.impl;
 
-import model.Student;
 import repository.StudentRepository;
 import util.DatabaseConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import models.Student;
 
 public class StudentRepositoryImpl implements StudentRepository {
     @Override

@@ -1,9 +1,9 @@
 package strategy;
 
-import model.Grade;
-import model.Student;
-
 import java.util.List;
+
+import models.Grade;
+import models.Student;
 
 public class GradeReportContext {
     private GradeReportStrategy strategy;

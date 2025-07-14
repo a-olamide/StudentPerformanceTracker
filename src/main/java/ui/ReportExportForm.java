@@ -10,8 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import model.Grade;
-import model.Student;
+import models.Grade;
+import models.Student;
 import service.GradeService;
 import service.StudentService;
 import strategy.ConsoleReportStrategy;
