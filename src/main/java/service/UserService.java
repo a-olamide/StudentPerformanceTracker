@@ -9,4 +9,8 @@ public class UserService {
     public boolean login(String username, String password) {
         return userRepo.validateLogin(username, password);
     }
+
+    public void addUser(models.User user) {
+        userRepo.save(user);
+    }
 }
