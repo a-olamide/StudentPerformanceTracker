@@ -1,21 +1,22 @@
 package ui;
 
+import java.awt.GridLayout;
+import java.util.List;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 import model.Grade;
 import model.Student;
-import repository.GradeRepository;
-import repository.StudentRepository;
-import repository.impl.GradeRepositoryImpl;
-import repository.impl.StudentRepositoryImpl;
 import service.GradeService;
 import service.StudentService;
-import service.SubjectService;
 import strategy.ConsoleReportStrategy;
 import strategy.CsvReportStrategy;
 import strategy.GradeReportContext;
-
-import javax.swing.*;
-import java.awt.*;
-import java.util.List;
 
 public class ReportExportForm extends JFrame {
 
@@ -53,9 +54,8 @@ public class ReportExportForm extends JFrame {
     private void loadStudents() {
         java.util.List<Student> students = studentService.getAllStudents();
         DefaultComboBoxModel<Student> model = new DefaultComboBoxModel<>();
-        for (Student s : students) {
-            model.addElement(s);
-        }
+        // Use Stream API to populate combo box
+        students.stream().forEach(model::addElement);
         cboStudents.setModel(model);
     }
 

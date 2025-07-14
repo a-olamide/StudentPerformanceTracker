@@ -1,14 +1,22 @@
 package ui;
 
-import model.Subject;
-import repository.SubjectRepository;
-import repository.impl.SubjectRepositoryImpl;
-import service.SubjectService;
-
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
+
+import model.Subject;
+import service.SubjectService;
 
 public class SubjectForm extends JFrame {
     private final SubjectService subjectService = new SubjectService();
@@ -69,9 +77,8 @@ public class SubjectForm extends JFrame {
     private void loadSubjectData() {
         tableModel.setRowCount(0);
         List<Subject> subjects = subjectService.getAllSubjects();
-        for (Subject s : subjects) {
-            tableModel.addRow(new Object[]{s.getId(), s.getName()});
-        }
+        // Use Stream API to populate table
+        subjects.stream().forEach(s -> tableModel.addRow(new Object[]{s.getId(), s.getName()}));
     }
 
     private void populateForm() {

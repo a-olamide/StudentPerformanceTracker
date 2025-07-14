@@ -1,15 +1,23 @@
 package ui;
 
-import model.Student;
-import repository.StudentRepository;
-import repository.impl.StudentRepositoryImpl;
-import service.StudentService;
-
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.time.LocalDate;
 import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
+
+import model.Student;
+import service.StudentService;
 
 public class StudentForm extends JFrame {
     private final StudentService studentService = new StudentService();
@@ -80,11 +88,10 @@ public class StudentForm extends JFrame {
     private void loadStudentData() {
         tableModel.setRowCount(0); // Clear table
         List<Student> students = studentService.getAllStudents();
-        for (Student s : students) {
-            tableModel.addRow(new Object[]{
-                    s.getId(), s.getFirstName(), s.getLastName(), s.getGender(), s.getDob()
-            });
-        }
+        // Use Stream API to populate table
+        students.stream().forEach(s -> tableModel.addRow(new Object[]{
+                s.getId(), s.getFirstName(), s.getLastName(), s.getGender(), s.getDob()
+        }));
     }
 
     private void populateForm() {

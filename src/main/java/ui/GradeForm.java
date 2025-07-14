@@ -1,23 +1,29 @@
 package ui;
 
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.time.LocalDate;
+import java.util.List;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
+
 import model.Grade;
 import model.Student;
 import model.Subject;
-import repository.GradeRepository;
-import repository.StudentRepository;
-import repository.SubjectRepository;
-import repository.impl.GradeRepositoryImpl;
-import repository.impl.StudentRepositoryImpl;
-import repository.impl.SubjectRepositoryImpl;
 import service.GradeService;
 import service.StudentService;
 import service.SubjectService;
-
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import java.awt.*;
-import java.time.LocalDate;
-import java.util.List;
 
 public class GradeForm extends JFrame {
     private final GradeService gradeService = new GradeService();
@@ -91,9 +97,8 @@ public class GradeForm extends JFrame {
     private void loadStudents() {
         java.util.List<Student> students = studentService.getAllStudents();
         DefaultComboBoxModel<Student> model = new DefaultComboBoxModel<>();
-        for (Student s : students) {
-            model.addElement(s);
-        }
+        // Use Stream API to populate combo box
+        students.stream().forEach(model::addElement);
         cboStudents.setModel(model);
         if (!students.isEmpty()) {
             cboStudents.setSelectedIndex(0);
@@ -104,9 +109,8 @@ public class GradeForm extends JFrame {
     private void loadSubjects() {
         java.util.List<Subject> subjects = subjectService.getAllSubjects();
         DefaultComboBoxModel<Subject> model = new DefaultComboBoxModel<>();
-        for (Subject s : subjects) {
-            model.addElement(s);
-        }
+        // Use Stream API to populate combo box
+        subjects.stream().forEach(model::addElement);
         cboSubjects.setModel(model);
     }
 
@@ -116,10 +120,11 @@ public class GradeForm extends JFrame {
         if (student == null) return;
 
         List<Grade> grades = gradeService.getGradesByStudent(student.getId());
-        for (Grade g : grades) {
+        // Use Stream API to populate table
+        grades.stream().forEach(g -> {
             Subject subject = subjectService.findById(g.getSubjectId());
             tableModel.addRow(new Object[]{g.getId(), subject.getName(), g.getScore(), g.getDateRecorded()});
-        }
+        });
     }
 
     private void populateGrade() {

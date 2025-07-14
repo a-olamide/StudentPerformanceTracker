@@ -1,15 +1,15 @@
 package service;
 
-import model.Subject;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import model.Subject;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class SubjectServiceTest {
@@ -24,6 +24,7 @@ public class SubjectServiceTest {
         service.addSubject(s);
 
         List<Subject> all = service.getAllSubjects();
+        // Use Stream API for assertion
         assertTrue(all.stream().anyMatch(sub -> sub.getName().equals("Philosophy")));
         insertedId = all.get(all.size() - 1).getId();
     }

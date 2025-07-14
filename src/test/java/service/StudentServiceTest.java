@@ -1,15 +1,17 @@
 package service;
 
-import model.Student;
+import java.time.LocalDate;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
-import java.time.LocalDate;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
+import model.Student;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class StudentServiceTest {
@@ -28,6 +30,7 @@ public class StudentServiceTest {
 
         service.addStudent(s);
         List<Student> all = service.getAllStudents();
+        // Use Stream API for assertion
         assertTrue(all.stream().anyMatch(stu -> stu.getFirstName().equals("John")));
         insertedId = all.get(all.size() - 1).getId();
     }
