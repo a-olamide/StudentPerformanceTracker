@@ -73,7 +73,7 @@ The application follows a layered architecture pattern, separating concerns betw
 ---
 
 ## 6. Use Case Diagram(s)
-(See attached Use Case Diagram image)
+![Use Case Diagram](./use-case-diagram.jpeg)
 
 ---
 
@@ -112,7 +112,7 @@ The application follows a layered architecture pattern, separating concerns betw
 ---
 
 ## 8. Class Diagram
-(See attached UML Class Diagram image)
+![Class Diagram](./class_diagram.png)
 
 ---
 
