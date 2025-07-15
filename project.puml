@@ -1,0 +1,325 @@
+@startuml
+class models.Subject {
+- int id
+- String name
++ int getId()
++ void setId(int)
++ String getName()
++ void setName(String)
++ String toString()
+}
+
+
+class models.Grade {
+- int id
+- int studentId
+- int subjectId
+- double score
+- LocalDate dateRecorded
++ int getId()
++ void setId(int)
++ int getStudentId()
++ void setStudentId(int)
++ int getSubjectId()
++ void setSubjectId(int)
++ double getScore()
++ void setScore(double)
++ LocalDate getDateRecorded()
++ void setDateRecorded(LocalDate)
+}
+
+
+class util.DataSeeder {
+- {static} StudentService studentService
+- {static} SubjectService subjectService
+- {static} GradeService gradeService
++ {static} void seed()
+- {static} void createTables()
+- {static} void seedAdminUser()
+- {static} void seedStudents()
+- {static} void seedSubjects()
+- {static} void seedGrades()
+}
+
+
+class strategy.ConsoleReportStrategy {
+- SubjectRepository subjectRepo
++ void generateReport(Student,List<Grade>)
+}
+
+
+class repository.impl.UserRepositoryImpl {
++ void save(User)
++ User findByUsername(String)
++ boolean validateLogin(String,String)
+}
+
+class ui.StudentForm {
+- StudentService studentService
+- JTable tblStudents
+- DefaultTableModel tableModel
+- JTextField txtFirstName
+- JButton btnAdd
+- void initComponents()
+- void loadStudentData()
+- void populateForm()
+- void addStudent()
+- void updateStudent()
+- void deleteStudent()
+- void clearForm()
+}
+
+
+class factory.ViewFactory {
++ {static} JFrame createView(ViewType)
+}
+
+class strategy.CsvReportStrategy {
+- SubjectRepository subjectRepo
++ void generateReport(Student,List<Grade>)
+}
+
+
+class service.StudentService {
+- StudentRepository studentRepo
++ List<Student> getAllStudents()
++ void addStudent(Student)
++ void updateStudent(Student)
++ void deleteStudent(int)
++ Student findById(int)
+}
+
+
+class service.SubjectService {
+- SubjectRepository subjectRepo
++ List<Subject> getAllSubjects()
++ void addSubject(Subject)
++ void updateSubject(Subject)
++ void deleteSubject(int)
++ Subject findById(int)
+}
+
+
+class repository.impl.GradeRepositoryImpl {
++ void save(Grade)
++ void update(Grade)
++ void delete(int)
++ Grade findById(int)
++ List<Grade> findByStudentId(int)
+}
+
+class repository.impl.SubjectRepositoryImpl {
++ void save(Subject)
++ void update(Subject)
++ void delete(int)
++ Subject findById(int)
++ List<Subject> findAll()
+}
+
+class StudentPerformanceTrackerApp {
++ {static} void main(String[])
+}
+
+interface strategy.GradeReportStrategy {
+~ void generateReport(Student,List<Grade>)
+}
+
+interface repository.GradeRepository {
+~ void save(Grade)
+~ void update(Grade)
+~ void delete(int)
+~ Grade findById(int)
+~ List<Grade> findByStudentId(int)
+}
+
+class models.User {
+- int id
+- String username
+- String passwordHash
++ int getId()
++ void setId(int)
++ String getUsername()
++ void setUsername(String)
++ String getPasswordHash()
++ void setPasswordHash(String)
+}
+
+
+class strategy.GradeReportContext {
+- GradeReportStrategy strategy
++ void setStrategy(GradeReportStrategy)
++ void generateReport(Student,List<Grade>)
+}
+
+
+class ui.ReportExportForm {
+- GradeService gradeService
+- StudentService studentService
+- JComboBox<Student> cboStudents
+- JButton btnExportCsv
+- void initComponents()
+- void loadStudents()
+- void exportReport(String)
+}
+
+
+class ui.GradeForm {
+- GradeService gradeService
+- StudentService studentService
+- SubjectService subjectService
+- JComboBox<Student> cboStudents
+- JComboBox<Subject> cboSubjects
+- JTextField txtScore
+- JTable tblGrades
+- DefaultTableModel tableModel
+- JButton btnAdd
+- void initComponents()
+- void loadStudents()
+- void loadSubjects()
+- void loadGrades()
+- void populateGrade()
+- void addGrade()
+- void updateGrade()
+- void deleteGrade()
+}
+
+
+class util.Config {
++ {static} String DB_URL
++ {static} String DB_USER
++ {static} String DB_PASSWORD
++ {static} String ADMIN_USER
++ {static} String ADMIN_PASSWORD
+}
+
+class util.DatabaseConnection {
+- {static} String URL
+- {static} String USER
+- {static} String PASSWORD
+- {static} Connection connection
++ {static} Connection getConnection()
+}
+
+
+interface repository.SubjectRepository {
+~ void save(Subject)
+~ void update(Subject)
+~ void delete(int)
+~ Subject findById(int)
+~ List<Subject> findAll()
+}
+
+class repository.impl.StudentRepositoryImpl {
++ void save(Student)
++ void update(Student)
++ void delete(int)
++ Student findById(int)
++ List<Student> findAll()
+}
+
+class service.UserService {
+- UserRepository userRepo
++ boolean login(String,String)
++ void addUser(models.User)
+}
+
+
+class ui.LoginForm {
+- JTextField txtUsername
+- JPasswordField txtPassword
+- JButton btnLogin
+- UserService userService
+- void initComponents()
+- void attemptLogin()
+}
+
+
+interface repository.StudentRepository {
+~ void save(Student)
+~ void update(Student)
+~ void delete(int)
+~ Student findById(int)
+~ List<Student> findAll()
+}
+
+enum factory.ViewType {
++  STUDENT
++  SUBJECT
++  GRADE
++  REPORT
+}
+
+class service.GradeService {
+- GradeRepository gradeRepo
++ void addGrade(Grade)
++ void updateGrade(Grade)
++ void deleteGrade(int)
++ List<Grade> getGradesByStudent(int)
+}
+
+
+interface repository.UserRepository {
+~ void save(User)
+~ User findByUsername(String)
+~ boolean validateLogin(String,String)
+}
+
+class ui.Dashboard {
+- String username
+- void initComponents()
+}
+
+
+class models.Student {
+- int id
+- String firstName
+- String lastName
+- String gender
+- LocalDate dob
+- int userId
++ int getId()
++ void setId(int)
++ String getFirstName()
++ void setFirstName(String)
++ String getLastName()
++ void setLastName(String)
++ String getGender()
++ void setGender(String)
++ LocalDate getDob()
++ void setDob(LocalDate)
++ int getUserId()
++ void setUserId(int)
++ String toString()
+}
+
+
+class ui.SubjectForm {
+- SubjectService subjectService
+- JTable tblSubjects
+- DefaultTableModel tableModel
+- JTextField txtSubjectName
+- JButton btnAdd
+- void initComponents()
+- void loadSubjectData()
+- void populateForm()
+- void addSubject()
+- void updateSubject()
+- void deleteSubject()
+}
+
+
+
+
+strategy.GradeReportStrategy <|.. strategy.ConsoleReportStrategy
+repository.UserRepository <|.. repository.impl.UserRepositoryImpl
+javax.swing.JFrame <|-- ui.StudentForm
+strategy.GradeReportStrategy <|.. strategy.CsvReportStrategy
+repository.GradeRepository <|.. repository.impl.GradeRepositoryImpl
+repository.SubjectRepository <|.. repository.impl.SubjectRepositoryImpl
+javax.swing.JFrame <|-- ui.ReportExportForm
+javax.swing.JFrame <|-- ui.GradeForm
+repository.StudentRepository <|.. repository.impl.StudentRepositoryImpl
+ui.JFrame <|-- ui.LoginForm
+ui.JFrame <|-- ui.Dashboard
+javax.swing.JFrame <|-- ui.SubjectForm
+@enduml
