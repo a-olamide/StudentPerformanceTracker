@@ -117,7 +117,8 @@ The application follows a layered architecture pattern, separating concerns betw
 ---
 
 ## 9. Sequence Diagrams
-(Can be provided for key actions such as Login, Register Student, Record Grades, View Report)
+Generate CSV report Sequence Diagram
+<img width="1242" height="786" alt="SequenceDiagram-generateReport" src="https://github.com/user-attachments/assets/f73e9bf3-d7cf-4a70-92e6-f9d87d865369" />
 
 ---
 
