@@ -54,7 +54,8 @@ Tracking student academic performance manually can lead to inconsistencies, inef
 The application follows a layered architecture pattern, separating concerns between UI, services, and data access.
 
 ### 5.2 Architecture Diagram
-(See attached architecture diagram image)
+<img width="1127" height="843" alt="layered architecture" src="https://github.com/user-attachments/assets/b2b7597c-aa99-47e4-8159-8185d7f8e0f8" />
+
 
 ### 5.3 Technologies Used
 - Java 21  
