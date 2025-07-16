@@ -8,7 +8,7 @@
 **Instructor:** Dr. Bright Gee Varghese R  
 
 **Team Members:**  
-[Olamide Boluwatife Akinoso]  [Student ID]  
+[Olamide Boluwatife Akinoso]  [619563]  
 [Azeem Ullah Baig]  [619573]  
 
 **Date of Submission:** 07/14/2025  
@@ -124,12 +124,24 @@ Generate CSV report Sequence Diagram
 
 ## 10. Screenshots
 - Login Form  
+<img width="474" height="188" alt="image" src="https://github.com/user-attachments/assets/f607d27d-7705-4196-824f-a193f5f1d46d" />
+
+- Dashboard
+<img width="1919" height="1013" alt="image" src="https://github.com/user-attachments/assets/1a5453e3-9de8-4a5a-93aa-52d0a1ba400c" />
+
 - Register Student Form  
+<img width="580" height="391" alt="image" src="https://github.com/user-attachments/assets/a85af0f3-48d0-4fa0-9df6-ec49c18d2093" />
+
 - Subject Entry Form  
+<img width="733" height="492" alt="image" src="https://github.com/user-attachments/assets/9216228f-c118-4e9b-b9ae-0d2dff8b43a8" />
+
 - Record Grades Form  
+<img width="733" height="492" alt="image" src="https://github.com/user-attachments/assets/35ef82b9-a834-4396-9090-9b1c7e4df196" />
+
 - View Report  
 
-(Screenshots provided as part of project assets)
+<img width="383" height="187" alt="image" src="https://github.com/user-attachments/assets/658bfde4-20fb-47cf-b551-75a7da726164" />
+
 
 ---
 
@@ -176,7 +188,7 @@ git clone https://github.com/yourrepo/student-performance-tracker
 ---
 
 ## 14. Team Members
-- Olamide Boluwatife Akinoso  
+- Olamide Boluwatife Akinoso (619563)
 - Azeem Ullah Baig (619573)  
 
 ---
